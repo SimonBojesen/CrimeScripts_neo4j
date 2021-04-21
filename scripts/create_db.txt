@@ -1,0 +1,9 @@
+//create db from CSV file: 2021-02-south-wales-street.csv
+MATCH(n) DETACH DELETE n;
+
+LOAD CSV WITH HEADERS FROM "file:///2021-02-south-wales-street.csv" AS row
+CREATE (c:Crime {crime_id: row.Crime_ID, month: row.Month, reported_by: row.Reported_by})
+MERGE (p:Place {location:row.Location})
+MERGE (ct:CrimeType {type: row.Crime_type})
+CREATE (c)-[:HAPPENED_AT]->(p)
+CREATE (c)-[:WAS_A]->(ct);

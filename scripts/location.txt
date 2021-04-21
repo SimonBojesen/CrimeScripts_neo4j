@@ -1,0 +1,6 @@
+// see top 10 locations with the most crimes
+MATCH (p:Place)
+WITH p, SIZE(()-[:HAPPENED_AT]->(p)) AS crimeCnt
+ORDER BY crimeCnt DESC LIMIT 10
+MATCH (c)-[:HAPPENED_AT]->(p)
+RETURN p.location, count(c);

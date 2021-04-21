@@ -1,0 +1,6 @@
+// see top 10 most common crimes
+MATCH (ct:CrimeType)
+WITH ct, SIZE(()-[:WAS_A]->(ct)) AS crimeCnt
+ORDER BY crimeCnt DESC LIMIT 10
+MATCH (c)-[:WAS_A]->(ct)
+RETURN ct.type, count(c);
