@@ -15,5 +15,5 @@
 4. Place the data file downloaded in step two inside this import folder.<br>
 5. Open the db with Neo4j browser<br>
 6. Find the code here:
-[code](scripts/)
+[code](scripts)
 7. run the code snippets by running the code in create.txt first to import csv data into the db, then run the other snippets as you want.
