@@ -11,5 +11,5 @@
 2. The second thing you need to do is download the data file:
 [data](data/2021-02-south-wales-street.csv)
 3. On the Neo4j dashboard inside the project you created the database, click "..." on the DB -> "Open folder" -> "Import"
-<img src="images/import-placement.png">
+<img src="images/import-placement2.png">
 
